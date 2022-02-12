@@ -13,8 +13,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    /* --grey: #ededed;
-    --grey-hover: #e0e0e0; */
+    --border-radius: 8px;
+    --link: #0583d2;
   }
 
   // ------ SCROLL BAR
