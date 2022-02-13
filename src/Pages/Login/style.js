@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const LoginPage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+import { Page } from '../../globalStyles'
+
+export const LoginPage = styled(Page)`
+
 `
 
 export const LoginContainer = styled.div`
@@ -18,8 +17,6 @@ export const LoginContainer = styled.div`
   .login_container__header {
     margin-bottom: 40px;
 
-    /* border: 1px solid; */
-
     p {
       font-size: 20px;
       font-weight: 400;
@@ -29,10 +26,6 @@ export const LoginContainer = styled.div`
   }
 
   .login_container__form {
-    
-
-    /* border: 1px solid; */
-
     form {
       display: flex;
       flex-direction: column;

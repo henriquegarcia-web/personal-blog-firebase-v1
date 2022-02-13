@@ -39,3 +39,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default GlobalStyle
+
+// --------------------------------- COMPONENTES
+
+export const Page = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`

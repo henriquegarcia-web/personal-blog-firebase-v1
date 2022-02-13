@@ -9,7 +9,7 @@ import {
 import {
   TextField,
   Button,
-} from '@mui/material/';
+} from '@mui/material/'
 
 const Login = () => {
   return (
@@ -28,7 +28,7 @@ const Login = () => {
               label="Seu e-mail" 
               size="small"
               fullWidth
-              />
+            />
 
             <TextField 
               id="outlined-basic" 
