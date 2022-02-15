@@ -12,7 +12,7 @@ export const LoginContainer = styled.div`
   padding: 40px;
   border-radius: var(--border-radius);
 
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px var(--box-shadow);
 
   .login_container__header {
     margin-bottom: 40px;

@@ -14,7 +14,11 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --border-radius: 8px;
+    --padding: 20px;
+
     --link: #0583d2;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --border-light: rgba(0, 0, 0, 0.05);
   }
 
   // ------ SCROLL BAR
