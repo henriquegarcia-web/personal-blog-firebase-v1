@@ -90,7 +90,8 @@ export const ViewHeaderInfos = styled.div`
 // --------------------------------------- VIEW - Container
 
 export const ViewContainer = styled.div`
-  height: calc(100% - 80px);
+  height: calc(100% - 60px);
+  padding: var(--padding);
   
   /* border: 2px solid orange; */
 `

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import {
   PanelPage,
@@ -27,13 +27,24 @@ import {
   FiFileText,
   FiFolder,
   FiUsers,
-  FiSliders,
+  FiActivity,
   FiSettings,
   FiBell,
   FiExternalLink,
 } from 'react-icons/fi'
 
+import Overview from '../../Containers/AdminViews/Overview'
+import Template from '../../Containers/AdminViews/Template'
+import Posts from '../../Containers/AdminViews/Posts'
+import Categories from '../../Containers/AdminViews/Categories'
+import Users from '../../Containers/AdminViews/Users'
+import Analytics from '../../Containers/AdminViews/Analytics'
+import Settings from '../../Containers/AdminViews/Settings'
+
 const Panel = () => {
+
+  const [view, setView] = useState('overview')
+
   return (
     <PanelPage>
 
@@ -44,25 +55,53 @@ const Panel = () => {
           </PanelLogo>
         </MenuHeader>
         <MenuContainer>
-          <Button variant="outlined" startIcon={<FiHome />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiHome />} 
+            onClick={() => setView('overview')}
+          >
             Overview
           </Button>
-          <Button variant="outlined" startIcon={<FiLayout />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiLayout />} 
+            onClick={() => setView('template')}
+          >
             Template
           </Button>
-          <Button variant="outlined" startIcon={<FiFileText />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiFileText />} 
+            onClick={() => setView('posts')}
+          >
             Posts
           </Button>
-          <Button variant="outlined" startIcon={<FiFolder />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiFolder />} 
+            onClick={() => setView('categories')}
+          >
             Categorias
           </Button>
-          <Button variant="outlined" startIcon={<FiUsers />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiUsers />} 
+            onClick={() => setView('users')}
+          >
             Usuários
           </Button>
-          <Button variant="outlined" startIcon={<FiSliders />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiActivity />} 
+            onClick={() => setView('analytics')}
+          >
             Analytics
           </Button>
-          <Button variant="outlined" startIcon={<FiSettings />}>
+          <Button 
+            variant="outlined" 
+            startIcon={<FiSettings />} 
+            onClick={() => setView('settings')}
+          >
             Configurações
           </Button>
         </MenuContainer>
@@ -94,7 +133,13 @@ const Panel = () => {
         </ViewHeader>
 
         <ViewContainer>
-
+          {view === 'overview' && <Overview /> }
+          {view === 'template' && <Template /> }
+          {view === 'posts' && <Posts /> }
+          {view === 'categories' && <Categories /> }
+          {view === 'users' && <Users /> }
+          {view === 'analytics' && <Analytics /> }
+          {view === 'settings' && <Settings /> }
         </ViewContainer>
 
       </PanelView>

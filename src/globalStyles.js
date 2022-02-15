@@ -52,3 +52,13 @@ export const Page = styled.div`
   align-items: center;
   height: 100vh;
 `
+
+export const View = styled.div`
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  height: 100%;
+  padding: var(--padding);
+
+  border: 1px solid var(--border-light);
+`
