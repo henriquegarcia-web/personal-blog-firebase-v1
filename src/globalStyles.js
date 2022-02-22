@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
     --link: #0583d2;
     --box-shadow: rgba(0, 0, 0, 0.1);
-    --border-light: rgba(0, 0, 0, 0.05);
+    --border-light: rgba(0, 0, 0, 0.1);
   }
 
   // ------ SCROLL BAR
@@ -55,10 +55,10 @@ export const Page = styled.div`
 
 export const View = styled.div`
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+  width: 100%;
   height: 100%;
   padding: var(--padding);
+  max-width: 1000px;
 
   border: 1px solid var(--border-light);
 `
