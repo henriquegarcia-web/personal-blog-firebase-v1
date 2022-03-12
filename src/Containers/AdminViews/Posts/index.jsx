@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
-
-import {
-  PostsView,
-  PostsHeader,
-  PostsList,
-} from './style'
+import * as S from './style'
 
 import {
   Button,
@@ -13,7 +8,7 @@ import {
 
 import ViewHeader from '../../../Components/Panel/ViewHeader'
 import PostItem from '../../../Components/Panel/PostItem'
-import AddPostModal from '../../../Components/Panel/AddPostModal'
+import AddPostModal from '../../../Components/Panel/Modal/AddPost'
 
 const Posts = () => {
 
@@ -38,47 +33,55 @@ const Posts = () => {
     <>
       {addPostModal && <AddPostModal addPostModal={addPostModal} setAddPostModal={setAddPostModal} />}
 
-      <PostsView>
+      <S.PostsView>
         <ViewHeader 
           viewTitle='Posts' 
           viewSubtitle='Criar, editar e ver publicações'
         />
 
-        <PostsHeader>
-          <TextField 
-            id="outlined-basic"
-            label="Pesquisar"
-            variant="outlined"
-            size="small"
-          />
-          <Button
-            variant="outlined" 
-            onClick={() => {}}
-          >
-            (0) Publicados
-          </Button>
-          <Button
-            variant="outlined" 
-            onClick={() => {}}
-          >
-            (0) Rascunhos
-          </Button>
-          <Button
-            variant="outlined" 
-            onClick={() => {setAddPostModal(!addPostModal)}}
-          >
-            Criar publicação
-          </Button>
-        </PostsHeader>
+        <PostsHeader addPostModal={addPostModal} setAddPostModal={setAddPostModal} />
 
-        <PostsList>
+        <S.PostsList>
           {postItemProps.map((postData) => (
             <PostItem key={postData.id} data={postData} />
           ))}
-        </PostsList>
-      </PostsView>
+        </S.PostsList>
+      </S.PostsView>
     </>
   )
 }
 
 export default Posts
+
+// --------------------------- POSTS HEADER
+
+const PostsHeader = ({ addPostModal, setAddPostModal }) => {
+  return (
+    <S.PostsHeader>
+      <TextField 
+        id="outlined-basic"
+        label="Pesquisar"
+        variant="outlined"
+        size="small"
+      />
+      <Button
+        variant="outlined" 
+        onClick={() => {}}
+      >
+        (0) Publicados
+      </Button>
+      <Button
+        variant="outlined" 
+        onClick={() => {}}
+      >
+        (0) Rascunhos
+      </Button>
+      <Button
+        variant="outlined" 
+        onClick={() => {setAddPostModal(!addPostModal)}}
+      >
+        Criar publicação
+      </Button>
+    </S.PostsHeader>
+  )
+}

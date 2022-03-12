@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
+    flex-shrink: 0;
   }
 
   :root {
@@ -28,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
     z-index: 1000;
   }
 
@@ -39,12 +41,13 @@ const GlobalStyle = createGlobalStyle`
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
   }
 
-  .quill-teste {
-    height: 470px;
+  .quill-rich-text {
+    height: 400px;
+    margin-bottom: 40px;
   }
 `
 
@@ -61,6 +64,7 @@ export const Page = styled.div`
 
 export const View = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   padding: var(--padding);
