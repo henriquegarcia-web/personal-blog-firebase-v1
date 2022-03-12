@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+import 'react-quill/dist/quill.snow.css';
+
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';

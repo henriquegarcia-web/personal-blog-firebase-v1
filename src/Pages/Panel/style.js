@@ -90,6 +90,8 @@ export const ViewHeaderInfos = styled.div`
 // --------------------------------------- VIEW - Container
 
 export const ViewContainer = styled.div`
+  display: flex;
+  justify-content: center;
   height: calc(100% - 60px);
   padding: var(--padding);
   

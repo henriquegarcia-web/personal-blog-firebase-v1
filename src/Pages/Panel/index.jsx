@@ -43,7 +43,7 @@ import Settings from '../../Containers/AdminViews/Settings'
 
 const Panel = () => {
 
-  const [view, setView] = useState('overview')
+  const [view, setView] = useState(<Overview />)
 
   return (
     <PanelPage>
@@ -58,49 +58,52 @@ const Panel = () => {
           <Button 
             variant="outlined" 
             startIcon={<FiHome />} 
-            onClick={() => setView('overview')}
+            onClick={() => setView(<Overview />)}
           >
             Overview
           </Button>
           <Button 
             variant="outlined" 
             startIcon={<FiLayout />} 
-            onClick={() => setView('template')}
+            onClick={() => setView(<Template />)}
+            disabled
           >
             Template
           </Button>
           <Button 
             variant="outlined" 
             startIcon={<FiFileText />} 
-            onClick={() => setView('posts')}
+            onClick={() => setView(<Posts />)}
           >
             Posts
           </Button>
           <Button 
             variant="outlined" 
             startIcon={<FiFolder />} 
-            onClick={() => setView('categories')}
+            onClick={() => setView(<Categories />)}
           >
             Categorias
           </Button>
           <Button 
             variant="outlined" 
             startIcon={<FiUsers />} 
-            onClick={() => setView('users')}
+            onClick={() => setView(<Users />)}
           >
             Usuários
           </Button>
           <Button 
             variant="outlined" 
             startIcon={<FiActivity />} 
-            onClick={() => setView('analytics')}
+            onClick={() => setView(<Analytics />)}
+            disabled
           >
             Analytics
           </Button>
           <Button 
             variant="outlined" 
             startIcon={<FiSettings />} 
-            onClick={() => setView('settings')}
+            onClick={() => setView(<Settings />)}
+            disabled
           >
             Configurações
           </Button>
@@ -133,13 +136,7 @@ const Panel = () => {
         </ViewHeader>
 
         <ViewContainer>
-          {view === 'overview' && <Overview /> }
-          {view === 'template' && <Template /> }
-          {view === 'posts' && <Posts /> }
-          {view === 'categories' && <Categories /> }
-          {view === 'users' && <Users /> }
-          {view === 'analytics' && <Analytics /> }
-          {view === 'settings' && <Settings /> }
+          {view}
         </ViewContainer>
 
       </PanelView>

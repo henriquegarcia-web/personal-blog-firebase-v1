@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
+    flex-shrink: 0;
   }
 
   :root {
@@ -18,7 +19,9 @@ const GlobalStyle = createGlobalStyle`
 
     --link: #0583d2;
     --box-shadow: rgba(0, 0, 0, 0.1);
-    --border-light: rgba(0, 0, 0, 0.05);
+    --border-light: rgba(0, 0, 0, 0.1);
+    --border-soft: rgba(0, 0, 0, 0.2);
+    --hover-soft: rgb(245, 245, 245);
   }
 
   // ------ SCROLL BAR
@@ -26,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
     z-index: 1000;
   }
 
@@ -37,8 +41,13 @@ const GlobalStyle = createGlobalStyle`
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+  }
+
+  .quill-rich-text {
+    height: 400px;
+    margin-bottom: 40px;
   }
 `
 
@@ -55,10 +64,20 @@ export const Page = styled.div`
 
 export const View = styled.div`
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+  flex-direction: column;
+  width: 100%;
   height: 100%;
   padding: var(--padding);
+  max-width: 1000px;
 
   border: 1px solid var(--border-light);
+`
+
+export const ViewHeaderSettings = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: var(--border-radius);
+
+  border: 1px solid var(--border-soft);
 `
