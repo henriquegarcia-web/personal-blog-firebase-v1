@@ -1,57 +1,25 @@
 import React from 'react'
-
-import {
-  PostItemContainer,
-  PostItemBanner,
-  PostItemBannerImage,
-  PostItemDetails,
-  PostItemDetailsTitle,
-  PostItemDetailsDate,
-  PostItemSettings,
-} from './style'
-
-import {
-  IconButton,
-} from '@mui/material/'
-
-import {
-  FiEye,
-  FiEdit,
-  FiDelete,
-  FiFolder,
-} from 'react-icons/fi'
+import PostItemSettings from '../PostItemSettings'
+import * as S from './style'
 
 const PostItem = ({ data }) => {
   return (
-    <PostItemContainer>
-      <PostItemBanner>
-        <PostItemBannerImage src={data.banner} />
-      </PostItemBanner>
+    <S.PostItemContainer>
+      <S.PostItemBanner>
+        <S.PostItemBannerImage src={data.banner} />
+      </S.PostItemBanner>
 
-      <PostItemDetails>
-        <PostItemDetailsTitle>
+      <S.PostItemDetails>
+        <S.PostItemDetailsTitle>
           {data.title}
-        </PostItemDetailsTitle>
-        <PostItemDetailsDate>
+        </S.PostItemDetailsTitle>
+        <S.PostItemDetailsDate>
           Publicado em: {data.createAt}
-        </PostItemDetailsDate>
-      </PostItemDetails>
+        </S.PostItemDetailsDate>
+      </S.PostItemDetails>
 
-      <PostItemSettings>
-        <IconButton>
-          <FiEye />
-        </IconButton>
-        <IconButton>
-          <FiEdit />
-        </IconButton>
-        <IconButton>
-          <FiDelete />
-        </IconButton>
-        <IconButton>
-          <FiFolder />
-        </IconButton>
-      </PostItemSettings>
-    </PostItemContainer>
+      <PostItemSettings item='posts' />
+    </S.PostItemContainer>
   )
 }
 

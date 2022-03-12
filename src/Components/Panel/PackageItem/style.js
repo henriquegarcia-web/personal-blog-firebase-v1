@@ -15,14 +15,14 @@ export const CategoryItemContainer = styled.div`
     background: var(--hover-soft);
 
     h2 {
-      color: rgba(0, 0, 0, 0.8);
+      color: rgba(0, 0, 0, 1);
     }
   }
 `
 
 export const CategoryItemTitle = styled.h2`
-  font-size: 18px;
-  font-weight: 200;
+  font-size: 17px;
+  font-weight: 300;
   transition: .2s;
 
   color: rgba(0, 0, 0, 0.6);

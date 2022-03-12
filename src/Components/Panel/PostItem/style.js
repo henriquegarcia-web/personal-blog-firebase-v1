@@ -13,10 +13,6 @@ export const PostItemContainer = styled.div`
 
   &:hover {
     background: var(--hover-soft);
-
-    div:nth-of-type(3) {
-      display: flex;
-    }
   }
 `
 
@@ -50,10 +46,4 @@ export const PostItemDetailsTitle = styled.h2`
 export const PostItemDetailsDate = styled.p`
   font-size: 16px;
   font-weight: 200;
-`
-
-export const PostItemSettings = styled.div`
-  display: none;
-  margin: 0 0 auto auto;
-  transition: .2s;
 `

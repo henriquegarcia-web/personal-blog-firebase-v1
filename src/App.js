@@ -9,23 +9,27 @@ import Register from './Pages/Register';
 import Panel from './Pages/Panel';
 import PageNotFound from './Pages/PageNotFound';
 
+import ViewProvider from './Contexts/ViewContext';
+
 function App() {
   return (
-    <Router>
-      <Routes>
+    <ViewProvider>
+      <Router>
+        <Routes>
 
-      <Route path='/' exact element={<Home />} />
-      <Route path='/home' element={<Home />} />
+        <Route path='/' exact element={<Home />} />
+        <Route path='/home' element={<Home />} />
 
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
 
-      <Route path='/admin' element={<Panel />} />
+        <Route path='/admin' element={<Panel />} />
 
-      <Route path='*' element={<PageNotFound />} />
+        <Route path='*' element={<PageNotFound />} />
 
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
+    </ViewProvider>
   );
 }
 

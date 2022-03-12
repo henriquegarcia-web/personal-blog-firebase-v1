@@ -84,7 +84,38 @@ export const ViewHeaderSearch = styled.div`
 `
 
 export const ViewHeaderInfos = styled.div`
+  position: relative;
   margin-left: auto;
+  
+  fieldset {
+    border: none;
+  }
+`
+
+export const ViewHeaderInfosModal = styled.div`
+  z-index: 10;
+  position: absolute;
+  width: 160px;
+  padding: 10px;
+  border-radius: 6px;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  
+  background-color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+`
+
+export const InfosModalInput = styled.div`
+
+`
+
+export const InfosModalClickListener = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
 `
 
 // --------------------------------------- VIEW - Container

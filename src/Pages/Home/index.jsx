@@ -1,14 +1,11 @@
 import React from 'react'
-
-import {
-  HomePage,
-} from './style'
+import * as S from './style'
 
 const Home = () => {
   return (
-    <HomePage>
+    <S.HomePage>
       Home
-    </HomePage>
+    </S.HomePage>
   )
 }
 

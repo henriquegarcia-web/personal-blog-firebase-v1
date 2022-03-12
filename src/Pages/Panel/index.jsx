@@ -1,25 +1,7 @@
-import React, { useState } from 'react'
-
-import {
-  PanelPage,
-  PanelMenu,
-  PanelView,
-  MenuHeader,
-  ViewHeader,
-  ViewContainer,
-  PanelLogo,
-  MenuContainer,
-  ViewHeaderSettings,
-  ViewHeaderSearch,
-  ViewHeaderInfos,
-} from './style'
-
-import {
-  Button,
-  IconButton,
-  TextField,
-  Avatar
-} from '@mui/material/'
+import React, { useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import * as S from './style'
+import * as MUI from '@mui/material/'
 
 import {
   FiHome,
@@ -36,92 +18,53 @@ import {
 import Overview from '../../Containers/AdminViews/Overview'
 import Template from '../../Containers/AdminViews/Template'
 import Posts from '../../Containers/AdminViews/Posts'
-import Categories from '../../Containers/AdminViews/Categories'
+import Packages from '../../Containers/AdminViews/Packages'
 import Users from '../../Containers/AdminViews/Users'
 import Analytics from '../../Containers/AdminViews/Analytics'
 import Settings from '../../Containers/AdminViews/Settings'
+import UserAccount from '../../Containers/AdminViews/_HiddenViews/UserAccount'
+
+import { ViewContext } from '../../Contexts/ViewContext'
 
 const Panel = () => {
 
-  const [view, setView] = useState(<Overview />)
+  const viewContext = useContext(ViewContext);
+
+  const [currentView, setCurrentView] = useState(viewContext.view)
+  const [toggleMenu, setToggleMenu] = useState(false)
+
+  useEffect(() => {
+    setCurrentView(viewContext.view)
+  }, [viewContext])
 
   return (
-    <PanelPage>
+    <S.PanelPage>
 
-      <PanelMenu>
-        <MenuHeader>
-          <PanelLogo>
+      <S.PanelMenu>
+        <S.MenuHeader>
+          <S.PanelLogo>
             Dashboard v1
-          </PanelLogo>
-        </MenuHeader>
-        <MenuContainer>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiHome />} 
-            onClick={() => setView(<Overview />)}
-          >
-            Overview
-          </Button>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiLayout />} 
-            onClick={() => setView(<Template />)}
-            disabled
-          >
-            Template
-          </Button>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiFileText />} 
-            onClick={() => setView(<Posts />)}
-          >
-            Posts
-          </Button>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiFolder />} 
-            onClick={() => setView(<Categories />)}
-          >
-            Categorias
-          </Button>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiUsers />} 
-            onClick={() => setView(<Users />)}
-          >
-            Usuários
-          </Button>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiActivity />} 
-            onClick={() => setView(<Analytics />)}
-            disabled
-          >
-            Analytics
-          </Button>
-          <Button 
-            variant="outlined" 
-            startIcon={<FiSettings />} 
-            onClick={() => setView(<Settings />)}
-            disabled
-          >
-            Configurações
-          </Button>
-        </MenuContainer>
-      </PanelMenu>
+          </S.PanelLogo>
+        </S.MenuHeader>
+        <S.MenuContainer>
 
-      <PanelView>
-        <ViewHeader>
-          <ViewHeaderSettings>
-            <IconButton>
+          <MenuInputs setView={setCurrentView} />
+          
+        </S.MenuContainer>
+      </S.PanelMenu>
+
+      <S.PanelView>
+        <S.ViewHeader>
+          <S.ViewHeaderSettings>
+            <MUI.IconButton>
               <FiBell />
-            </IconButton>
-            <IconButton>
+            </MUI.IconButton>
+            <MUI.IconButton>
               <FiExternalLink />
-            </IconButton>
-          </ViewHeaderSettings>
-          <ViewHeaderSearch>
-            <TextField 
+            </MUI.IconButton>
+          </S.ViewHeaderSettings>
+          <S.ViewHeaderSearch>
+            <MUI.TextField 
               id="outlined-basic"
               label="Pesquisar"
               variant="outlined"
@@ -129,20 +72,139 @@ const Panel = () => {
               fullWidth
               disabled
             />
-          </ViewHeaderSearch>
-          <ViewHeaderInfos>
-            <Avatar sx={{ bgcolor: 'orange', cursor: 'pointer' }}>HG</Avatar>
-          </ViewHeaderInfos>
-        </ViewHeader>
+          </S.ViewHeaderSearch>
+          <S.ViewHeaderInfos>
+            <MUI.Avatar 
+              sx={{ 
+                bgcolor: 'orange', 
+                cursor: 'pointer' 
+              }}
+              onClick={() => setToggleMenu(!toggleMenu)}
+            >HG</MUI.Avatar>
 
-        <ViewContainer>
-          {view}
-        </ViewContainer>
+            {toggleMenu && (
+              <HeaderMenu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+            )}
 
-      </PanelView>
+          </S.ViewHeaderInfos>
 
-    </PanelPage>
+          {toggleMenu && (
+            <S.InfosModalClickListener
+              onClick={() => setToggleMenu(!toggleMenu)}
+            ></S.InfosModalClickListener>
+          )}
+        </S.ViewHeader>
+
+        <S.ViewContainer>
+          {currentView}
+        </S.ViewContainer>
+
+      </S.PanelView>
+
+    </S.PanelPage>
   )
 }
 
 export default Panel
+
+// ---------------------- MENU HEADER 
+
+export const HeaderMenu = ({ toggleMenu, setToggleMenu}) => {
+
+  const viewContext = useContext(ViewContext);
+
+  return (
+    <S.ViewHeaderInfosModal>
+      <S.InfosModalInput>
+        <MUI.Button
+          variant="outlined"
+          size="small" 
+          onClick={() => {
+            setToggleMenu(!toggleMenu)
+            viewContext.setView(<UserAccount />)
+          }}
+          sx={{
+            width: '100%',
+            marginBottom: '10px',
+          }}
+        >
+          Minha conta
+        </MUI.Button>
+      </S.InfosModalInput>
+      <S.InfosModalInput>
+        <Link to='/login'>
+          <MUI.Button
+            variant="outlined"
+            size="small"
+            sx={{
+              width: '100%',
+            }}
+          >
+            Sair
+          </MUI.Button>
+        </Link>
+      </S.InfosModalInput>
+    </S.ViewHeaderInfosModal>
+  )
+}
+
+// ---------------------- MENU INPUTS
+
+export const MenuInputs = ({ setView }) => {
+  return (
+    <>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiHome />} 
+        onClick={() => setView(<Overview />)}
+      >
+        Overview
+      </MUI.Button>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiLayout />} 
+        onClick={() => setView(<Template />)}
+        disabled
+      >
+        Template
+      </MUI.Button>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiFileText />} 
+        onClick={() => setView(<Posts />)}
+      >
+        Posts
+      </MUI.Button>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiFolder />} 
+        onClick={() => setView(<Packages />)}
+      >
+        Pacotes
+      </MUI.Button>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiUsers />} 
+        onClick={() => setView(<Users />)}
+      >
+        Usuários
+      </MUI.Button>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiActivity />} 
+        onClick={() => setView(<Analytics />)}
+        disabled
+      >
+        Analytics
+      </MUI.Button>
+      <MUI.Button 
+        variant="outlined" 
+        startIcon={<FiSettings />} 
+        onClick={() => setView(<Settings />)}
+        disabled
+      >
+        Configurações
+      </MUI.Button>
+    </>
+  )
+}
