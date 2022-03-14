@@ -56,7 +56,7 @@ export const CategoriesHeader = () => {
           backgroundColor: 'white',
         }}
       >
-        Criar pacote
+        Criar categoria
       </MUI.Button>
     </S.CategoriesHeader>
   )

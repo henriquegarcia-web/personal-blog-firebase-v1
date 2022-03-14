@@ -13,3 +13,8 @@ export const PostItemSettings = styled.div`
     }
   }
 `
+
+export const EditCategoryModal = styled.div`
+  position: absolute;
+  display: flex;
+`

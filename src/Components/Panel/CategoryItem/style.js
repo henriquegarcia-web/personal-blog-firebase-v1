@@ -20,6 +20,7 @@ export const CategoryItemTitle = styled.h2`
   font-size: 17px;
   font-weight: 400;
   transition: .2s;
+  margin-bottom: 0;
 
   color: rgba(0, 0, 0, 0.85);
 `
