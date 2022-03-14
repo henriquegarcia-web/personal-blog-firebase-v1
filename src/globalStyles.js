@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --border-radius: 8px;
+    --border-radius: 6px;
     --padding: 20px;
 
     --link: #0583d2;
@@ -76,6 +76,7 @@ export const View = styled.div`
 export const ViewHeaderSettings = styled.div`
   display: flex;
   align-items: center;
+  height: 60px;
   padding: 10px;
   border-radius: var(--border-radius);
 

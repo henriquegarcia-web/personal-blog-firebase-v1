@@ -9,7 +9,7 @@ export const PostItemContainer = styled.div`
   cursor: pointer;
   transition: .2s;
 
-  border: 1px solid var(--border-soft);
+  border: 1px solid var(--border-light);
 
   &:hover {
     background: var(--hover-soft);
@@ -17,8 +17,8 @@ export const PostItemContainer = styled.div`
 `
 
 export const PostItemBanner = styled.div`
-  width: 120px;
-  height: 70px;
+  width: 85px;
+  height: 55px;
   border-radius: var(--border-radius);
   overflow: hidden;
   margin-right: 15px;
@@ -35,15 +35,17 @@ export const PostItemDetails = styled.div`
 `
 
 export const PostItemDetailsTitle = styled.h2`
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: rgba(0, 0, 0, 0.85);
 `
 
 export const PostItemDetailsDate = styled.p`
-  font-size: 16px;
-  font-weight: 200;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
 `

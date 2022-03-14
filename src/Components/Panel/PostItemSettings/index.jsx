@@ -6,7 +6,7 @@ import * as I from 'react-icons/fi'
 const PostItemSettings = ({ item }) => {
   return (
     <>
-      {item === 'posts' ? (
+      {item === 'posts' && (
         <S.PostItemSettings>
           <MUI.IconButton>
             <I.FiEye />
@@ -21,7 +21,9 @@ const PostItemSettings = ({ item }) => {
             <I.FiFolder />
           </MUI.IconButton>
         </S.PostItemSettings>
-      ) : (
+      )}
+      
+      {item === 'category' && (
         <S.PostItemSettings>
           <MUI.IconButton>
             <I.FiEye />
@@ -31,6 +33,14 @@ const PostItemSettings = ({ item }) => {
           </MUI.IconButton>
           <MUI.IconButton>
             <I.FiDelete />
+          </MUI.IconButton>
+        </S.PostItemSettings>
+      )}
+      
+      {item === 'user' && (
+        <S.PostItemSettings>
+          <MUI.IconButton>
+            <I.FiEye />
           </MUI.IconButton>
         </S.PostItemSettings>
       )}

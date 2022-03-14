@@ -24,22 +24,33 @@ const Register = () => {
           <form action="">
 
             <TextField 
-              id="outlined-basic" 
+              label="Seu nome completo" 
+              size="small"
+              fullWidth
+              sx={{
+                marginBottom: '10px',
+              }}
+            />
+
+            <TextField 
               label="Seu e-mail" 
               size="small"
               fullWidth
+              sx={{
+                marginBottom: '20px',
+              }}
             />
 
             <TextField 
-              id="outlined-basic" 
               label="Sua senha" 
               size="small"
               fullWidth
-              margin="normal"
+              sx={{
+                marginBottom: '10px',
+              }}
             />
 
             <TextField 
-              id="outlined-basic" 
               label="Repita a senha" 
               size="small"
               fullWidth

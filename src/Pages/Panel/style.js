@@ -77,12 +77,6 @@ export const ViewHeaderSettings = styled.div`
   margin-right: 20px;
 `
 
-export const ViewHeaderSearch = styled.div`
-  width: 100%;
-  max-width: 300px;
-  margin-right: 20px;
-`
-
 export const ViewHeaderInfos = styled.div`
   position: relative;
   margin-left: auto;
@@ -125,7 +119,5 @@ export const ViewContainer = styled.div`
   justify-content: center;
   height: calc(100% - 60px);
   padding: var(--padding);
-  
-  /* border: 2px solid orange; */
 `
 

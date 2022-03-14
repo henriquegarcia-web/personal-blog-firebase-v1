@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const ViewHeaderContainer = styled.div`
   width: 100%;
-  height: fit-content;
-  padding-bottom: 20px;
+  height: 70px;
   margin-bottom: 20px;
 
   border-bottom: 1px solid var(--border-light);

@@ -9,23 +9,19 @@ export const CategoryItemContainer = styled.div`
   cursor: pointer;
   transition: .2s;
 
-  border: 1px solid var(--border-soft);
+  border: 1px solid var(--border-light);
 
   &:hover {
     background: var(--hover-soft);
-
-    h2 {
-      color: rgba(0, 0, 0, 1);
-    }
   }
 `
 
 export const CategoryItemTitle = styled.h2`
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   transition: .2s;
 
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.85);
 `
 
 export const CategoryItemSettings = styled.div`

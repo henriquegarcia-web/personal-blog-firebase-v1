@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
 
-import Overview from "../Containers/AdminViews/Overview";
+import Posts from "../Containers/AdminViews/Posts";
 
 export const ViewContext = createContext();
 
 const ViewProvider = ({ children }) => {
 
-  const [view, setView] = useState(<Overview />)
+  const [view, setView] = useState(<Posts />)
 
   return (
     <ViewContext.Provider

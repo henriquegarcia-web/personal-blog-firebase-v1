@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PostItemSettings = styled.div`
-  margin: 0 0 auto auto;
+  margin: 0 0 0 auto;
   transition: .2s;
 
   svg {

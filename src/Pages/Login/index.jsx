@@ -24,18 +24,21 @@ const Login = () => {
           <form action="">
 
             <TextField 
-              id="outlined-basic" 
               label="Seu e-mail" 
               size="small"
               fullWidth
+              sx={{
+                marginBottom: '10px',
+              }}
             />
 
             <TextField 
-              id="outlined-basic" 
               label="Sua senha" 
               size="small"
               fullWidth
-              margin="normal"
+              sx={{
+                marginBottom: '10px',
+              }}
             />
 
             <div className='login_container__form__links'>

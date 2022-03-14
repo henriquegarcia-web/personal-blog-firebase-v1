@@ -63,22 +63,35 @@ const PostsHeader = ({ addPostModal, setAddPostModal }) => {
         label="Pesquisar"
         variant="outlined"
         size="small"
+        sx={{ 
+          width: '300px',
+          backgroundColor: 'white',
+        }}
       />
       <Button
         variant="outlined" 
         onClick={() => {}}
+        sx={{ 
+          backgroundColor: 'white',
+        }}
       >
         (0) Publicados
       </Button>
       <Button
         variant="outlined" 
         onClick={() => {}}
+        sx={{ 
+          backgroundColor: 'white',
+        }}
       >
         (0) Rascunhos
       </Button>
       <Button
         variant="outlined" 
         onClick={() => {setAddPostModal(!addPostModal)}}
+        sx={{ 
+          backgroundColor: 'white',
+        }}
       >
         Criar publicação
       </Button>

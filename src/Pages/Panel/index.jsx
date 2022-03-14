@@ -18,7 +18,7 @@ import {
 import Overview from '../../Containers/AdminViews/Overview'
 import Template from '../../Containers/AdminViews/Template'
 import Posts from '../../Containers/AdminViews/Posts'
-import Packages from '../../Containers/AdminViews/Packages'
+import Categories from '../../Containers/AdminViews/Categories'
 import Users from '../../Containers/AdminViews/Users'
 import Analytics from '../../Containers/AdminViews/Analytics'
 import Settings from '../../Containers/AdminViews/Settings'
@@ -63,16 +63,6 @@ const Panel = () => {
               <FiExternalLink />
             </MUI.IconButton>
           </S.ViewHeaderSettings>
-          <S.ViewHeaderSearch>
-            <MUI.TextField 
-              id="outlined-basic"
-              label="Pesquisar"
-              variant="outlined"
-              size="small"
-              fullWidth
-              disabled
-            />
-          </S.ViewHeaderSearch>
           <S.ViewHeaderInfos>
             <MUI.Avatar 
               sx={{ 
@@ -157,6 +147,7 @@ export const MenuInputs = ({ setView }) => {
         variant="outlined" 
         startIcon={<FiHome />} 
         onClick={() => setView(<Overview />)}
+        disabled
       >
         Overview
       </MUI.Button>
@@ -178,9 +169,9 @@ export const MenuInputs = ({ setView }) => {
       <MUI.Button 
         variant="outlined" 
         startIcon={<FiFolder />} 
-        onClick={() => setView(<Packages />)}
+        onClick={() => setView(<Categories />)}
       >
-        Pacotes
+        Categorias
       </MUI.Button>
       <MUI.Button 
         variant="outlined" 

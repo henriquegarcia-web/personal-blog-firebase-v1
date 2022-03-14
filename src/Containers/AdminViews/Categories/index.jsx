@@ -3,9 +3,9 @@ import * as S from './style'
 import * as MUI from '@mui/material/'
 
 import ViewHeader from '../../../Components/Panel/ViewHeader'
-import PackageItem from '../../../Components/Panel/PackageItem'
+import CategoryItem from '../../../Components/Panel/CategoryItem'
 
-const Packages = () => {
+const Categories = () => {
 
   const categoriesProps = [
     { id: 1, title: 'Soft Skills', postsNumber: '04' }, 
@@ -16,22 +16,22 @@ const Packages = () => {
   return (
     <S.CategoriesView>
       <ViewHeader 
-        viewTitle='Pacotes de dados' 
-        viewSubtitle='Criar, editar e ver pacotes'
+        viewTitle='Categorias' 
+        viewSubtitle='Criar, editar e ver categorias'
       />
 
       <CategoriesHeader />
 
       <S.CategoriesList>
         {categoriesProps.map((categotyData) => (
-          <PackageItem key={categotyData.id} data={categotyData} />
+          <CategoryItem key={categotyData.id} data={categotyData} />
         ))}
       </S.CategoriesList>
     </S.CategoriesView>
   )
 }
 
-export default Packages
+export default Categories
 
 // ------------------------- HEADER DA CATEGORIA
 
@@ -43,12 +43,18 @@ export const CategoriesHeader = () => {
         label="Pesquisar"
         variant="outlined"
         size="small"
-        sx={{ width: '300px' }}
+        sx={{ 
+          width: '300px',
+          backgroundColor: 'white',
+        }}
       />
       <MUI.Button
         variant="outlined" 
         onClick={() => {}}
-        sx={{ marginLeft: 'auto' }}
+        sx={{ 
+          marginLeft: 'auto',
+          backgroundColor: 'white',
+        }}
       >
         Criar pacote
       </MUI.Button>

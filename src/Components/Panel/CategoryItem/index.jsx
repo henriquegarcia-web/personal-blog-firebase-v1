@@ -4,7 +4,7 @@ import * as MUI from '@mui/material/'
 
 import PostItemSettings from '../PostItemSettings'
 
-const PackageItem = ({ data }) => {
+const CategoryItem = ({ data }) => {
   return (
     <S.CategoryItemContainer>
       <S.CategoryItemTitle>
@@ -25,10 +25,10 @@ const PackageItem = ({ data }) => {
           }}
         />
 
-        <PostItemSettings item='packages' />
+        <PostItemSettings item='category' />
       </S.CategoryItemSettings>
     </S.CategoryItemContainer>
   )
 }
 
-export default PackageItem
+export default CategoryItem
