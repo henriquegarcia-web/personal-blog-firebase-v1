@@ -15,14 +15,14 @@ import {
   FiExternalLink,
 } from 'react-icons/fi'
 
-import Overview from '../../Containers/AdminViews/Overview'
-import Template from '../../Containers/AdminViews/Template'
-import Posts from '../../Containers/AdminViews/Posts'
-import Categories from '../../Containers/AdminViews/Categories'
-import Users from '../../Containers/AdminViews/Users'
-import Analytics from '../../Containers/AdminViews/Analytics'
-import Settings from '../../Containers/AdminViews/Settings'
-import UserAccount from '../../Containers/AdminViews/_HiddenViews/UserAccount'
+import Overview from '../../Containers/Panel/Overview'
+import Template from '../../Containers/Panel/Template'
+import Posts from '../../Containers/Panel/Posts'
+import Categories from '../../Containers/Panel/Categories'
+import Users from '../../Containers/Panel/Users'
+import Analytics from '../../Containers/Panel/Analytics'
+import Settings from '../../Containers/Panel/Settings'
+import UserAccount from '../../Containers/Panel/_HiddenViews/UserAccount'
 
 import { ViewContext } from '../../Contexts/ViewContext'
 
@@ -41,16 +41,7 @@ const Panel = () => {
     <S.PanelPage>
 
       <S.PanelMenu>
-        <S.MenuHeader>
-          <S.PanelLogo>
-            Dashboard v1
-          </S.PanelLogo>
-        </S.MenuHeader>
-        <S.MenuContainer>
-
-          <MenuInputs setView={setCurrentView} />
-          
-        </S.MenuContainer>
+        <PanelMenu currentView={currentView} setCurrentView={setCurrentView} />
       </S.PanelMenu>
 
       <S.PanelView>
@@ -199,3 +190,23 @@ export const MenuInputs = ({ setView }) => {
     </>
   )
 }
+
+// ---------------------- PANEL HEADER
+
+export const PanelMenu = ({ setView, setCurrentView }) => {
+  return (
+    <>
+      <S.MenuHeader>
+        <S.PanelLogo>
+          Dashboard v1
+        </S.PanelLogo>
+      </S.MenuHeader>
+      <S.MenuContainer>
+
+        <MenuInputs setView={setCurrentView} />
+        
+      </S.MenuContainer>
+    </>
+  )
+}
+

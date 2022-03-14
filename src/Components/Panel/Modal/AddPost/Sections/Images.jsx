@@ -30,14 +30,14 @@ const Images = () => {
           >
             Upload
           </MUI.Button>
-          <MUI.TextField 
-            disabled 
+          <MUI.TextField
+            label='Imagem arquivada'
             variant="outlined"
-            placeholder='Captura de tela de 2022-03-12 00-46-57.png'
+            value='Captura de tela de 2022-03-12 00-46-57.png'
             style={{
-              width: '460px',
-              overflow: 'hidden',
+              width: '500px'
             }}
+            disabled 
           />
         </S.ImageInputLabel> 
       </>

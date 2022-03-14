@@ -55,9 +55,10 @@ const UserAccountList = () => {
   return (
     <S.UserAccountList>
       <div>
-        <MUI.TextField 
-          placeholder="Alterar seu nome"
-          label='Henrique Pereira Garcia'
+        <MUI.TextField
+          label='Alterar seu nome'
+          placeholder='Henrique Pereira Garcia'
+          defaultValue='Henrique Pereira Garcia'
           variant="outlined"
           style={{
             width: 'calc(60% - 10px)',
@@ -65,7 +66,8 @@ const UserAccountList = () => {
           }}
           onChange={(e) => handleInputName(e)}
         />
-        <MUI.TextField 
+        <MUI.TextField
+          label='Número de telefone'
           value='(51) 9 9307-7788'
           variant="outlined"
           style={{
@@ -76,9 +78,10 @@ const UserAccountList = () => {
       </div>
 
       <div>
-        <MUI.TextField 
-          placeholder="Alterar e-mail"
-          label='https.henriquegarcia@gmail.com'
+        <MUI.TextField
+          label='Alterar e-mail'
+          placeholder='https.henriquegarcia@gmail.com'
+          defaultValue='https.henriquegarcia@gmail.com'
           variant="outlined"
           style={{
             width: 'calc(50% - 10px)',
@@ -86,7 +89,8 @@ const UserAccountList = () => {
           }}
           onChange={(e) => handleInputEmail(e)}
         />
-        <MUI.TextField 
+        <MUI.TextField
+          label='Nova senha'
           placeholder="Nova senha"
           // ref='password'
           hintText="Password"
@@ -98,7 +102,8 @@ const UserAccountList = () => {
           }}
           onChange={(e) => handleInputPassword('main_password', e)}
         />
-        <MUI.TextField 
+        <MUI.TextField
+          label='Confirmar nova senha'
           placeholder="Confirmar nova senha"
           // ref='password'
           hintText="Password"

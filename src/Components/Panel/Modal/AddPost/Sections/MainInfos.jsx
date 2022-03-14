@@ -49,7 +49,8 @@ const MainInfos = () => {
 
       <S.ModalPostSelectors>
         <S.ModalCategories>
-          <MUI.Select 
+          <MUI.Select
+            label=' '
             value={category} 
             onChange={handleChange}
             defaultValue='none'

@@ -20,7 +20,6 @@ const Links = () => {
           variant='outlined'
           style={{
             width: 'calc(100% - 510px)',
-            overflow: 'hidden',
           }}
         />
         <MUI.TextField
@@ -29,7 +28,6 @@ const Links = () => {
           style={{
             width: '350px',
             marginLeft: '10px',
-            overflow: 'hidden',
           }}
         />
         <MUI.Button
